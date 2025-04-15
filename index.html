@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Discord</title>
+  <style>
+    body {
+      background-color: #1e1e2f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .discord-user {
+      background-color: #5865F2;
+      padding: 15px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      transition: background-color 0.3s ease;
+    }
+
+    .discord-user:hover {
+      background-color: #4752c4;
+    }
+
+    .copied {
+      margin-top: 10px;
+      color: #00ffae;
+      font-size: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="discord-user" onclick="copyToClipboard()">xionpulse</div>
+  <div class="copied" id="copiedText">¡Copiado al portapapeles!</div>
+
+  <script>
+    function copyToClipboard() {
+      const text = "xionpulse";
+      navigator.clipboard.writeText(text).then(() => {
+        const copied = document.getElementById("copiedText");
+        copied.style.display = "block";
+        setTimeout(() => {
+          copied.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
